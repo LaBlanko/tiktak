@@ -7,7 +7,9 @@ pipeline {
     stages {
 	stage('Abhaengigkeiten'){
 	    steps {
+		sh '''
 		sudo apt update && sudo apt install nodejs npm
+		'''
 	    }
 	}
         stage('Build') {
