@@ -5,19 +5,11 @@ pipeline {
             }
       }
     stages {
-	stage('Abhaengigkeiten'){
-	    steps {
-		sh '''
-		sudo apt update && sudo apt install nodejs npm
-		'''
-	    }
-	}
         stage('Build') {
             steps {
                 echo "Building.."
                 sh '''
-                npm i
-		npm run build
+                echo "Ola"
                 '''
             }
         }
@@ -25,7 +17,7 @@ pipeline {
             steps {
                 echo "Testing.."
                 sh '''
-		echo "Test Test"
+		echo "Bonjur"
                 '''
             }
         }
@@ -33,7 +25,7 @@ pipeline {
             steps {
                 echo 'Deliver....'
                 sh '''
-                echo "doing delivery stuff.."
+                echo "doing delivery stuff..."
                 '''
             }
         }
