@@ -4,10 +4,12 @@ pipeline {
             label 'master'
             }
       }
-    triggers {
-        pollSCM '* * * * *'
-    }
     stages {
+	stage('Abhaengigkeiten'){
+	    steps {
+		sudo apt update && sudo apt install nodejs npm
+	    }
+	}
         stage('Build') {
             steps {
                 echo "Building.."
